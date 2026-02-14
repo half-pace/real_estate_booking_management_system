@@ -14,48 +14,59 @@ const Home = () => {
     useEffect(() => {
         //hero animation
         gsap.from('.hero-title', {
+            y: 150,
+            opacity: 0,
+            duration: 1.5,
+            ease: 'power4.out',
+            delay: 0.2
+        });
+
+        gsap.from('.hero-subtitle', {
             y: 100,
             opacity: 0,
             duration: 1.2,
             ease: 'power4.out',
-            delay: 0.3
-        });
-
-        gsap.from('.hero-subtitle', {
-            y: 50,
-            opacity: 0,
-            duration: 1,
-            ease: 'power4.out',
-            delay: 0.6
+            delay: 0.5
         });
 
         gsap.from('.hero-buttons', {
-            y: 30,
+            y: 80,
             opacity: 0,
-            duration: 0.8,
+            duration: 1,
             ease: 'power4.out',
-            delay: 0.9
+            delay: 0.8
         });
 
         gsap.from('.hero-stats', {
-            y: 30,
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            ease: 'power4.out',
+            delay: 1.1
+        });
+
+        gsap.from('.stat', {
+            scale: 0,
             opacity: 0,
             duration: 0.8,
-            ease: 'power4.out',
-            delay: 1.2
+            stagger: 0.2,
+            ease: 'back.out(1.7)',
+            delay: 1.3
         });
 
         //feature cards animation
         gsap.from('.feature-card', {
             scrollTrigger: {
                 trigger: '.features-grid',
-                start: 'top 80%',
+                start: 'top 85%',
             },
-            y: 80,
+            y: 120,
             opacity: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'power3.out'
+            scale: 0.8,
+            rotation: -5,
+            duration: 1,
+            stagger: 0.25,
+            ease: 'back.out(1.4)'
         });
 
         //fetch properties
