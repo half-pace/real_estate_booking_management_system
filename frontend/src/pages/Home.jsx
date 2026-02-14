@@ -1,15 +1,15 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, /*useState*/ } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import axios from 'axios';
+//import axios from 'axios';
 import './Home.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
     const heroRef = useRef(null);
-    const [properties, setProperties] = useState([]);
+    //const [properties, setProperties] = useState([]);
 
     useEffect(() => {
         //hero animation
@@ -59,17 +59,17 @@ const Home = () => {
         });
 
         //fetch properties
-        fetchProperties();
+        //fetchProperties();
     }, []);
 
-    const fetchProperties = async () => {
-        try {
-            const response = await axios.get('http://localhost:5000/api/properties?status=available');
-            setProperties(response.data.slice(0, 6));
-        }catch (error) {
-            console.log('Error fetching properties:', error);
-        }
-    };
+    // const fetchProperties = async () => {
+    //     try {
+    //         const response = await axios.get('http://localhost:5000/api/properties?status=available');
+    //         setProperties(response.data.slice(0, 6));
+    //     }catch (error) {
+    //         console.log('Error fetching properties:', error);
+    //     }
+    // };
 
     return (
         <div className="home">
